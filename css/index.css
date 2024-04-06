@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62%;
+    scroll-behavior: smooth;
+}
+body {
+    padding: 0.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem auto;
+    background: #efefef;
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    padding: 0.5rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: #e4e4e4;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    visibility: hidden;
+}
+.main .form {
+    transition: 0.3s ease-in;
+    position: absolute;
+    z-index: 9990;
+    background: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 500px;
+    top: 30%;
+    border-radius: 5px;
+    box-shadow:
+        5px 5px 15px rgb(126, 126, 126),
+        -5px -5px 15px rgb(126, 126, 126);
+}
+.form #error {
+    color: rgb(255, 37, 37);
+    margin: 0.5rem auto;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease-in;
+}
+.form h2 {
+    color: rgb(32, 144, 255);
+}
+.container #not-user {
+    color: rgb(199, 99, 0);
+    margin: 1rem auto;
+}
+.form input {
+    margin: 0.8rem auto;
+    padding: 0.8rem;
+    border-radius: 5px;
+    outline: none;
+    border: 0.5px solid #414141;
+}
+.form button {
+    outline: none;
+    border: none;
+    width: 120px;
+    margin: 0.5rem auto;
+    padding: 0.8rem;
+    background: #005e91;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 8px;
+}
+.form span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 17px;
+    padding: 0.5rem;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    background: red;
+    display: inline-block;
+    border-radius: 50%;
+}
+.form button:hover {
+    background: #00a848;
+    transition: 0.3s ease-in;
+}
+.container {
+    position: relative;
+    max-width: 600px;
+    overflow-x: scroll;
+    align-items: center;
+    justify-content: center;
+}
+.container .header {
+    width: 100%;
+    padding: 0.8rem 0.2rem;
+    display: flex;
+    justify-content: space-around;
+    background: #0068ab;
+    align-items: center;
+    text-align: center;
+}
+.header .user {
+    color: #fff;
+    font-weight: 600;
+}
+.header .search-area {
+    margin: 0;
+    background: #fff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.search-area span {
+    margin-right: 0.8rem;
+}
+.search-area input {
+    width: 100%;
+    border: 1px solid #fff;
+    color: #0083bf;
+    border-radius: 15px;
+    padding: 0.6rem 0.8rem;
+    outline: none;
+    border: none;
+}
+.header a {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+table {
+    max-width: 600px;
+}
+table th {
+    background: #0068ab;
+    color: #fff;
+    font-weight: 500;
+}
+table,
+th,
+td {
+    border-style: double;
+    border-width: 2px;
+    border-color: #4787ff;
+    border-collapse: collapse;
+}
+th,
+td {
+    padding: 10px 5px;
+    text-align: left;
+    background: #fff;
+    color: #007474;
+    font-weight: 500;
+}
+td a {
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+
+/* Creating Animation */
+@keyframes top_bootom {
+    0%,100% {
+        top: 0;
+    }
+    100% {
+        top: 30%;
+    }
+}
