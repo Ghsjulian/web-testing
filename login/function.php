@@ -8,20 +8,9 @@ function login($email, $password, $db)
   $user_pass = trim($password);
   $enc_password = sha1($user_pass);
   if ($user_email && $password) {
-    $sql = "SELECT user_email,user_password,login_token FROM users WHERE user_email='$user_email' AND user_password='$enc_password'";
+    $sql = "SELECT email,password FROM users WHERE email='$user_email' AND password='$enc_password'";
     $query = $db->__LOGIN__($sql);
     if ($query) {
-      $sql_2 = "SELECT * FROM users WHERE user_email='$user_email' AND user_password='$enc_password'";
-      $token_query = $db->Select_Single($sql_2);
-      $payload = [
-        "user_id" => $token_query["user_id"],
-        "user_name" => $token_query["user_name"],
-        "time" => time(),
-      ];
-      $tok = encode_jwt($payload);
-      $SQL_3 = "UPDATE users SET login_token='$tok' WHERE user_email='$user_email' AND user_password='$enc_password'";
-      $product = $db->Insert($SQL_3);
-      $token = $tok;
       $status = "success";
       $message = "Login Successfully";
     } else {
@@ -34,7 +23,6 @@ function login($email, $password, $db)
   }
   return [
     "status" => $status,
-     "token" => $token,
     "message" => $message,
   ];
 }

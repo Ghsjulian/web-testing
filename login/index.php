@@ -14,8 +14,8 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 if ($requestMethod === "POST") {
   $data = json_decode(file_get_contents("php://input"), true);
   #  echo json_encode($data);
-  $email = $data["user_email"];
-  $password = $data["user_password"];
+  $email = $data["email"];
+  $password = $data["password"];
   $login = login($email, $password, $DB);
   echo json_encode($login);
 } else {

@@ -3,5 +3,5 @@
 require "./database/database.php";
 
 $db = new Database;
-print_r($db->check());
+echo sha1('ghs_julian$90');
 ?>

@@ -1,7 +1,7 @@
 "use strict";
 
 function _dom_(tag) {
-    return document.querySelector(tag);
+   return document.querySelector(tag);
 }
 
 var myTable = [];

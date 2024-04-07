@@ -7,24 +7,34 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
     </head>
     <body>
-      <div  class="main">
-        <div class="form">
-          <span id="close">X</span>
-          <h2 id="action"></h2>
-          <p id="error"></p>
-          <input type="text" id="name" placeholder="Enter User Name">
-          <input type="email" id="email" placeholder="Enter User Email">
-          <input type="password" id="password" placeholder="Enter User Password">
-          <input type="text" id="status" placeholder="Enter User Status">
-          <button id="btn">Create Now</button>
-        </div>
+        <div class="main">
+            <div class="form">
+                <span id="close">X</span>
+                <h2 id="action"></h2>
+                <p id="error"></p>
+                <input id="user_id" type="text" value="" hidden="true">
+                <input id="type" type="text" value="" hidden="true">
+                <input type="text" id="name" placeholder="Enter User Name" />
+                <input type="email" id="email" placeholder="Enter User Email" />
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter User Password"
+                />
+                <input
+                    type="text"
+                    id="status"
+                    placeholder="Enter User Status"
+                />
+                <button id="btn">Create Now</button>
+            </div>
         </div>
 
         <div class="container">
-            <div  class="header">
+            <div class="header">
                 <div class="user">Total User : 10</div>
                 <div class="search-area">
-                    <input type="text" id="search" placeholder="Search..." />
+                    <input type="text" id="search" placeholder="Search..." onkeyup="search()"/>
                     <span
                         ><svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -64,11 +74,21 @@
                     Create</a
                 >
             </div>
-           
-            <table id="table"></table>
+
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User Name</th>
+                        <th>User Email</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
             <h2 id="not-user"></h2>
         </div>
-        <script src="js/main.js"></script>
-        
+        <script type="module" src="js/table.js"></script>
     </body>
 </html>
